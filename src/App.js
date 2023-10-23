@@ -57,25 +57,28 @@ const App = () => {
   };
 
   return (
-      <div className="container mt-5">
-        <div className={`alert alert-success ${successMessage ? '' : 'd-none'}`}>{successMessage}</div>
-        <div className={`alert alert-danger ${errorMessage ? '' : 'd-none'}`}>{errorMessage}</div>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="address-input">Enter Qwoyn Address:</label>
-            <input
-                type="text"
-                className="form-control"
-                id="address-input"
-                required
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Request Tokens
-          </button>
-        </form>
+      <div className="app">
+        <Logo /> {/* Display the Logo component */}
+        <div className="container">
+          <div className={`alert alert-success ${successMessage ? '' : 'd-none'}`}>{successMessage}</div>
+          <div className={`alert alert-danger ${errorMessage ? '' : 'd-none'}`}>{errorMessage}</div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="address-input">Enter Qwoyn Address:</label>
+              <input
+                  type="text"
+                  className="form-control"
+                  id="address-input"
+                  required
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Request Tokens
+            </button>
+          </form>
+        </div>
       </div>
   );
 };
