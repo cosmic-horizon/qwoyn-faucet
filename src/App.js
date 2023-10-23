@@ -7,7 +7,7 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const is_valid_qwoyn_address = (address) => {
-    if (address.length !== 43 || !address.startsWith('qwoyn')) {
+    if (!address.startsWith('qwoyn')) {
       return false;
     }
 
