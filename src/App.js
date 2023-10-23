@@ -6,8 +6,8 @@ const App = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const is_valid_osmosis_address = (address) => {
-    if (address.length !== 43 || !address.startsWith('osmo')) {
+  const is_valid_qwoyn_address = (address) => {
+    if (address.length !== 43 || !address.startsWith('qwoyn')) {
       return false;
     }
 
@@ -26,8 +26,8 @@ const App = () => {
     setSuccessMessage('');
     setErrorMessage('');
 
-    if (!is_valid_osmosis_address(address)) {
-      setErrorMessage('Invalid Osmosis address');
+    if (!is_valid_qwoyn_address(address)) {
+      setErrorMessage('Invalid Qwoyn address');
       return;
     }
 
@@ -51,7 +51,7 @@ const App = () => {
         <div className={`alert alert-danger ${errorMessage ? '' : 'd-none'}`}>{errorMessage}</div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="address-input">Enter Osmosis Address:</label>
+            <label htmlFor="address-input">Enter Qwoyn Address:</label>
             <input
                 type="text"
                 className="form-control"
