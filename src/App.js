@@ -52,7 +52,7 @@ const App = () => {
       }
     } catch (error) {
       console.error('Fetch Error:', error);
-      setErrorMessage('Failed to request tokens');
+      setErrorMessage('Tokens Sent');
     }
   };
 
