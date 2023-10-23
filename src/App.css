@@ -42,6 +42,7 @@ body {
     width: 100%; /* Make the button width 100% of its container */
     height: 60px; /* Increased button height */
     margin-top: 1rem; /* Add some space between the button and the input */
+    font-size: 18px; /* Larger font size for the button text */
 }
 
 #submit-button:hover {
