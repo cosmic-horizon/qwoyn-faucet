@@ -75,7 +75,7 @@ const App = () => {
                   onChange={(e) => setAddress(e.target.value)}
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" id="submit-button" className="btn btn-primary">
               Request Tokens
             </button>
           </form>
