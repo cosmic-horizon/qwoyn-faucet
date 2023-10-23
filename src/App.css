@@ -103,4 +103,5 @@ body {
     border: none;
     height: 35px; /* Half the original height (50px / 2) */
     width: 100%; /* Make the input width 100% of its container */
+    font-size: 14px; /* Larger font size for the text inside the form */
 }
