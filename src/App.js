@@ -34,11 +34,12 @@ const App = () => {
     try {
       const response = await fetch(`http://45.77.214.92:5000?address=${address}`);
       if (response.ok) {
-        const data = await response.json();
-        console.log('Response Data:', data);
+        const responseData = await response.json();
+        console.log('Response Data:', responseData);
 
-        if (data.tx_response && data.tx_response.code === 0) {
-          const txHash = data.tx_response.txhash;
+        // Access the "tx_response" field within the "response" object
+        if (responseData.response && responseData.response.tx_response && responseData.response.tx_response.code === 0) {
+          const txHash = responseData.response.tx_response.txhash;
           setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
         } else {
           setErrorMessage('Transaction failed');
