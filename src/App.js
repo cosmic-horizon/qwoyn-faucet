@@ -89,25 +89,25 @@ const App = () => {
                   onChange={(e) => setAddress(e.target.value)}
               />
             </div>
-            <button type="submit" id="submit-button" className="btn btn-primary">
+            <button type="submit" id="submit-button" className="btn btn-primary" disabled={!address}>
               Request Tokens
             </button>
           </form>
-        </div>
 
-        <Modal show={showModal} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{successMessage ? 'Success' : 'Error'}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {successMessage ? successMessage : errorMessage}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+          <Modal show={showModal} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>{successMessage ? 'Success' : 'Error'}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {successMessage ? successMessage : errorMessage}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
       </div>
   );
 };
