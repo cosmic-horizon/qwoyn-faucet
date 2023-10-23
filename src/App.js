@@ -32,15 +32,24 @@ const App = () => {
     }
 
     try {
-      // Send a request to the specified URL and fetch the address data
-      const response = await fetch(`http://45.77.214.92:5000/?address=${address}`);
+      const response = await fetch(`http://45.77.214.92:5000?address=${address}`);
       if (response.ok) {
         const data = await response.json();
-        setSuccessMessage(data);
+        console.log('Response Data:', data);
+
+        if (data.tx_response && data.tx_response.code === 0) {
+          const txHash = data.tx_response.txhash;
+          setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
+        } else {
+          setErrorMessage('Transaction failed');
+        }
       } else {
-        throw new Error('Request failed');
+        const errorMessage = await response.text();
+        console.error('Request Error:', errorMessage);
+        setErrorMessage('Failed to request tokens');
       }
     } catch (error) {
+      console.error('Fetch Error:', error);
       setErrorMessage('Failed to request tokens');
     }
   };
