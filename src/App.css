@@ -40,7 +40,7 @@ body {
     border: none;
     color: #fff;
     width: 100%; /* Make the button width 100% of its container */
-    height: 60px; /* Increased button height */
+    height: 50px; /* Increased button height */
     margin-top: 1rem; /* Add some space between the button and the input */
     font-size: 18px; /* Larger font size for the button text */
 }
@@ -101,6 +101,6 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     border: none;
-    height: 25px; /* Half the original height (50px / 2) */
+    height: 35px; /* Half the original height (50px / 2) */
     width: 100%; /* Make the input width 100% of its container */
 }
