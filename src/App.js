@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import Logo from './Logo';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 const App = () => {
   const [address, setAddress] = useState('');
+  const [showModal, setShowModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -14,11 +17,19 @@ const App = () => {
 
     const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     for (let i = 4; i < 43; i++) {
-      if (!alphabet.includes(address.charAt(i))) {
+      if (!alphabet.includes(address.charAt(i)) {
         return false;
       }
     }
     return true;
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const handleShow = () => {
+    setShowModal(true);
   };
 
   const handleSubmit = async (event) => {
@@ -29,6 +40,7 @@ const App = () => {
 
     if (!is_valid_qwoyn_address(address)) {
       setErrorMessage('Invalid Qwoyn address');
+      handleShow(); // Show the modal for error message
       return;
     }
 
@@ -43,17 +55,21 @@ const App = () => {
         if (responseData.response) {
           const txHash = responseData.response.tx_response.txhash;
           setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
+          handleShow(); // Show the modal for success message
         } else {
           console.log('Transaction failed');
           setErrorMessage('Transaction failed');
+          handleShow(); // Show the modal for error message
         }
       } else {
         console.error('Request Error:', responseData);
         setErrorMessage('Failed to request tokens');
+        handleShow(); // Show the modal for error message
       }
     } catch (error) {
       console.error('Fetch Error:', error);
       setErrorMessage('Tokens Sent');
+      handleShow(); // Show the modal for error message
     }
   };
 
@@ -61,8 +77,6 @@ const App = () => {
       <div className="app">
         <Logo /> {/* Display the Logo component */}
         <div className="container">
-          <div className={`alert alert-success ${successMessage ? '' : 'd-none'}`}>{successMessage}</div>
-          <div className={`alert alert-danger ${errorMessage ? '' : 'd-none'}`}>{errorMessage}</div>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="address-input">Enter Qwoyn Address:</label>
@@ -80,6 +94,20 @@ const App = () => {
             </button>
           </form>
         </div>
+
+        <Modal show={showModal} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{successMessage ? 'Success' : 'Error'}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {successMessage ? successMessage : errorMessage}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
   );
 };
