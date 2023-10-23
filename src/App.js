@@ -17,7 +17,7 @@ const App = () => {
 
     const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     for (let i = 4; i < 43; i++) {
-      if (!alphabet.includes(address.charAt(i)) {
+      if (!alphabet.includes(address.charAt(i))) {
         return false;
       }
     }
