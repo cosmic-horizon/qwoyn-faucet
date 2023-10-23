@@ -36,7 +36,7 @@ body {
 }
 
 #submit-button {
-    background-color: #F58A22;
+    background-color: #a35b12;
     border: none;
     color: #fff;
     width: 100%; /* Make the button width 100% of its container */
@@ -45,7 +45,7 @@ body {
 }
 
 #submit-button:hover {
-    background-color: #a35b12;
+    background-color: #F58A22;
     color: #fff;
 }
 

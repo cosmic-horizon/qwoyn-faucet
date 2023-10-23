@@ -56,7 +56,7 @@ const App = () => {
       }
     } catch (error) {
       console.error('Fetch Error:', error);
-      setErrorMessage('Tokens Sent');
+      setErrorMessage('Testnet Tokens Sent');
     }
   };
 
