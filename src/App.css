@@ -40,16 +40,17 @@ body {
     border: none;
     color: #fff;
     width: 100%; /* Make the button width 100% of its container */
+    height: 60px; /* Increased button height */
     margin-top: 1rem; /* Add some space between the button and the input */
 }
 
 #submit-button:hover {
-    background-color: #b700d3;
+    background-color: #a35b12;
     color: #fff;
 }
 
 #submit-button:active {
-    background-color: #b700d3;
+    background-color: #a35b12;
     color: #fff;
 }
 
