@@ -6,6 +6,7 @@ const App = () => {
   const [address, setAddress] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const is_valid_qwoyn_address = (address) => {
     if (!address.startsWith('qwoyn')) {
@@ -31,6 +32,8 @@ const App = () => {
       setErrorMessage('Invalid Qwoyn address');
       return;
     }
+
+    setIsButtonDisabled(true); // Disable the button
 
     try {
       const response = await fetch(`http://45.77.214.92:5000?address=${address}`);
@@ -83,7 +86,12 @@ const App = () => {
                   onChange={(e) => setAddress(e.target.value)}
               />
             </div>
-            <button type="submit" id="submit-button" className="btn btn-primary" disabled={!address}>
+            <button
+                type="submit"
+                id="submit-button"
+                className="btn btn-primary"
+                disabled={isButtonDisabled || !address}
+            >
               Request Tokens
             </button>
           </form>
