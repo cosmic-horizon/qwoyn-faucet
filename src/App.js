@@ -93,21 +93,20 @@ const App = () => {
               Request Tokens
             </button>
           </form>
-
-          <Modal show={showModal} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>{successMessage ? 'Success' : 'Error'}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {successMessage ? successMessage : errorMessage}
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
         </div>
+
+        <Modal show={showModal} onHide={handleClose}>
+          <Modal.Header closeButton>
+          </Modal.Header>
+          <Modal.Body>
+            {successMessage ? successMessage : errorMessage}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
   );
 };
