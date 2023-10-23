@@ -37,7 +37,7 @@ const App = () => {
         const responseData = await response.json();
 
         // Access the "tx_response" field directly
-        if (responseData.tx_response && responseData.tx_response.code === 0) {
+        if (responseData.tx_response) {
           const txHash = responseData.tx_response.txhash;
           setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
         } else {
