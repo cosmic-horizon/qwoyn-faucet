@@ -37,11 +37,11 @@ const App = () => {
         const responseData = await response.json();
         console.log('Response Data:', responseData);
 
-        // Access the "tx_response" field within the "response" object
         if (responseData.response && responseData.response.tx_response && responseData.response.tx_response.code === 0) {
           const txHash = responseData.response.tx_response.txhash;
           setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
         } else {
+          console.log('Transaction failed');
           setErrorMessage('Transaction failed');
         }
       } else {
