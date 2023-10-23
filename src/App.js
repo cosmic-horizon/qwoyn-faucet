@@ -76,16 +76,19 @@ const App = () => {
           )}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="address-input" className="form-label">Enter Qwoyn Address:</label>
-
-              <input
-                  type="text"
-                  className="form-control"
-                  id="address-input"
-                  required
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-              />
+              <div>
+                <label htmlFor="address-input" className="form-label">Enter Qwoyn Address:</label>
+              </div>
+              <div>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="address-input"
+                    required
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
+              </div>
             </div>
             <button
                 type="submit"
