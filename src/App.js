@@ -62,7 +62,7 @@ const App = () => {
         <Logo /> {/* Display the Logo component */}
         <div className="container">
           {successMessage && (
-              <div className="alert alert-success">
+              <div className="alert alert-success" style={{ color: 'green' }}>
                 {successMessage}
               </div>
           )}
