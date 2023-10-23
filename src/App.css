@@ -36,7 +36,7 @@ body {
 }
 
 #submit-button {
-    background-color: #9026a1;
+    background-color: #F58A22;
     border: none;
     color: #fff;
     width: 100%; /* Make the button width 100% of its container */
@@ -65,9 +65,9 @@ body {
 }
 
 .alert-success {
-    background-color: #F58A22;
-    border-color: #F58A22;
-    color: #F58A22;
+    background-color: #32a852;
+    border-color: #000000;
+    color: #32a852;
 }
 
 .alert-success:hover {
