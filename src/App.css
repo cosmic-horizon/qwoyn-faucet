@@ -45,17 +45,17 @@ body {
 }
 
 #submit-button:hover {
-    background-color: #b700d3;
+    background-color: #DC2458;
     color: #fff;
 }
 
 #submit-button:active {
-    background-color: #b700d3;
+    background-color: #DC2458;
     color: #fff;
 }
 
 #submit-button:disabled {
-    background-color: #5c146f;
+    background-color: #DC2458;
     color: #fff;
 }
 
