@@ -35,13 +35,12 @@ const App = () => {
       const response = await fetch(`http://45.77.214.92:5000?address=${address}`);
       if (response.ok) {
         const responseData = await response.json();
-        console.log('Response Data:', responseData);
 
-        if (responseData.response && responseData.response.tx_response && responseData.response.tx_response.code === 0) {
-          const txHash = responseData.response.tx_response.txhash;
+        // Access the "tx_response" field directly
+        if (responseData.tx_response && responseData.tx_response.code === 0) {
+          const txHash = responseData.tx_response.txhash;
           setSuccessMessage(`Transaction successful. Tx Hash: ${txHash}`);
         } else {
-          console.log('Transaction failed');
           setErrorMessage('Transaction failed');
         }
       } else {
@@ -50,7 +49,6 @@ const App = () => {
         setErrorMessage('Failed to request tokens');
       }
     } catch (error) {
-      console.error('Fetch Error:', error);
       setErrorMessage('Failed to request tokens');
     }
   };
