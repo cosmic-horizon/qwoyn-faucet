@@ -76,7 +76,8 @@ const App = () => {
           )}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="address-input">Enter Qwoyn Address:</label>
+              <label htmlFor="address-input" className="form-label">Enter Qwoyn Address:</label>
+
               <input
                   type="text"
                   className="form-control"
