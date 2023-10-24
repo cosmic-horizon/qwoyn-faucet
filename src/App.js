@@ -66,6 +66,9 @@ const App = () => {
         <Header />
         <Logo /> {/* Display the Logo component */}
         <div className="container">
+          <div className="description-container">
+            <p>Welcome to our Qwoyn Faucet! Please enter your Qwoyn address below and 10 $QWOYN will be sent to your wallet. This will only work once! If you need more tokens please contact our dev team.</p>
+          </div>
           {successMessage && (
               <div className="alert alert-success" style={{ color: 'green' }}>
                 {successMessage}

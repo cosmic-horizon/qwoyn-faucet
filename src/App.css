@@ -97,9 +97,11 @@ body {
 /* Styles for the logo image (wider and larger) */
 .logo {
     width: 500px; /* Adjust the width as needed */
-    height: 270px; /* Adjust the height as needed */
-    margin: 0 auto 10rem -10px;
+    height: 300px; /* Adjust the height as needed */
+    margin: 0 auto; /* Center horizontally */
     display: block;
+    text-align: center; /* Center text within the logo container */
+    margin-top: 1rem; /* Add some space between the logo and the description */
 }
 
 /* Styles for the form control input (half the size) */
@@ -142,4 +144,12 @@ body {
 .header ul li a {
     text-decoration: none; /* Remove underline from links */
     color: #fff; /* Link text color */
+}
+
+.description-container {
+    width: 50%; /* Half the screen width */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text within the container */
+    font-size: 24px; /* Larger font size for the description */
+    padding: 1rem; /* Optional padding for spacing */
 }
