@@ -1,4 +1,4 @@
-/* Header.js */
+// Header.js
 import React from 'react';
 
 const Header = () => {
@@ -20,3 +20,5 @@ const Header = () => {
         </div>
     );
 };
+
+export default Header;
