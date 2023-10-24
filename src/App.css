@@ -97,7 +97,7 @@ body {
 
 /* Logo.js */
 .logo {
-    max-width: 100%; /* Allow the logo to adjust its size based on the container */
+    max-width: 50%; /* Allow the logo to adjust its size based on the container */
     display: block;
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center text within the logo container */
