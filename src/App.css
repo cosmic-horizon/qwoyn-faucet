@@ -156,3 +156,11 @@ body {
 .center-button {
     text-align: center;
 }
+
+/* Adjust the button's position for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    #submit-button {
+        position: relative;
+        top: 0;
+    }
+}
