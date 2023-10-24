@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Logo from './Logo';
+import Header from './Header'; // Import the Header component
 
 const App = () => {
   const [address, setAddress] = useState('');
@@ -62,6 +63,7 @@ const App = () => {
 
   return (
       <div className="app">
+        <Header />
         <Logo /> {/* Display the Logo component */}
         <div className="container">
           {successMessage && (

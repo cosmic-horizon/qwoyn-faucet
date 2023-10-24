@@ -3,7 +3,7 @@
 /* Update the body styles for background and text color */
 body {
     background: rgb(22, 16, 50);
-    background: linear-gradient(90deg, rgba(22, 16, 50, 1) 0%, rgba(45, 30, 90, 1) 100%);
+    background: linear-gradient(90deg, rgba(0, 231, 255, 1) 0%, rgba(220, 36, 88, 1) 100%);
     color: #fff;
     overflow: hidden;
     display: flex;
@@ -11,6 +11,12 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+}
+
+.container {
+    max-width: 200%; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 5rem; /* Optional: Add padding for spacing */
 }
 
 /* Styles for the card container */
@@ -39,7 +45,7 @@ body {
     background-color: #a35b12;
     border: none;
     color: #fff;
-    width: 100%; /* Make the button width 100% of its container */
+    width: 101%; /* Make the button width 100% of its container */
     height: 50px; /* Increased button height */
     margin-top: 1rem; /* Add some space between the button and the input */
     font-size: 18px; /* Larger font size for the button text */
@@ -91,14 +97,14 @@ body {
 /* Styles for the logo image (wider and larger) */
 .logo {
     width: 500px; /* Adjust the width as needed */
-    height: 300px; /* Adjust the height as needed */
-    margin: 0 auto 1rem;
+    height: 270px; /* Adjust the height as needed */
+    margin: 0 auto 10rem -10px;
     display: block;
 }
 
 /* Styles for the form control input (half the size) */
 .form-label {
-    font-size: 18px; /* Larger font size for the label */
+    font-size: 22px; /* Larger font size for the label */
     margin-bottom: 10px; /* Add space between the label and the form */
 }
 
@@ -112,3 +118,28 @@ body {
     width: 100%; /* Ensure the input occupies the full width */
 }
 
+.header {
+    background-color: rgba(0, 0, 0, 0.1); /* Transparent background with 50% opacity */
+    color: #fff; /* Header text color */
+}
+
+.header nav {
+    display: flex; /* Make the navigation links horizontal */
+    justify-content: space-around; /* Distribute links evenly across the header */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.header ul {
+    list-style: none; /* Remove list bullets */
+    padding: 0;
+}
+
+.header ul li {
+    display: inline; /* Display list items inline */
+    margin: 0 10px; /* Add margin between list items */
+}
+
+.header ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Link text color */
+}
