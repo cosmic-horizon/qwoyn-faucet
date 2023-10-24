@@ -146,9 +146,13 @@ body {
 }
 
 .description-container {
-    width: 50%; /* Half the screen width */
+    width: 60%; /* Reduced width for better visibility */
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center text within the container */
     font-size: 24px; /* Larger font size for the description */
     padding: 1rem; /* Optional padding for spacing */
+}
+
+.center-button {
+    text-align: center;
 }

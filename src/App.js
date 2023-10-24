@@ -98,7 +98,7 @@ const App = () => {
             <button
                 type="submit"
                 id="submit-button"
-                className="btn btn-primary"
+                className="btn btn-primary center-button"
                 disabled={isButtonDisabled || !address}
             >
               Request Tokens
