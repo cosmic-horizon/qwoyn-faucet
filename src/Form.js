@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Form = ({ onSubmit }) => {
     const [address, setAddress] = useState('');
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [isRequestSent, setIsRequestSent] = useState(false);
 
     const is_valid_qwoyn_address = (address) => {
         if (!address.startsWith('qwoyn')) {
@@ -26,12 +27,26 @@ const Form = ({ onSubmit }) => {
             return;
         }
 
-        setIsButtonDisabled(true);
+        if (isRequestSent) {
+            alert('Request already sent.');
+            return;
+        }
+
+        setIsButtonDisabled(true); // Disable the button
+        setIsRequestSent(true);
 
         // Simulate an API call (you should replace this with your actual API call)
         setTimeout(() => {
-            setIsButtonDisabled(false);
-            alert('Tokens sent!'); // Replace this with your success message handling
+            // Replace this with your API call logic
+
+            // For the purpose of this example, we simulate a success scenario
+            const success = true;
+
+            if (success) {
+                alert('Tokens sent!');
+            } else {
+                alert('Token send failed.');
+            }
         }, 2000); // Simulated delay
 
         // Submit the data
@@ -63,7 +78,7 @@ const Form = ({ onSubmit }) => {
                 className="btn btn-primary"
                 disabled={isButtonDisabled || !address}
             >
-                Request Tokens
+                {isRequestSent ? 'Tokens Requested' : 'Request Tokens'}
             </button>
         </form>
     );
