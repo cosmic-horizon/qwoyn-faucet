@@ -49,6 +49,7 @@ body {
     height: 50px; /* Increased button height */
     margin-top: 1rem; /* Add some space between the button and the input */
     font-size: 18px; /* Larger font size for the button text */
+    display: block; /* Ensure the button is displayed as a block element */
 }
 
 #submit-button:hover {
